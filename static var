@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+class forstatic//i am using static variables for staic words through out myy program e.g string so that ican concatinate with other varibles 
+{
+    static String var_id = "Fa19-bsse-";
+    static String var_name = "Student : ";
+}
+
+class Student{
+    
+    public String std_id;
+    public String std_name;
+}
+
+class concatinate_class
+{
+    public static void cc()//her i use static method for conctinate static varibale which are defined in  
+    {
+         Scanner obj = new Scanner(System.in);
+          //student class 
+          Student objj = new Student();
+          System.out.println("Enter id : ");
+          objj.std_id = obj.next();
+          System.out.println("Enter name : ");
+          objj.std_name = obj.next();
+          
+          System.out.println("Your id is : "+forstatic.var_id+""+objj.std_id+"\n"+"Your name is : "+forstatic.var_name+""+objj.std_name);
+    }
+}
+class state//it will run first
+{
+    
+    static public String block_id;
+    static public String block_name;
+    
+static{
+    System.out.println("Static block of faculty:  ");
+    Scanner dtatescann = new Scanner(System.in);
+      System.out.println("Enter batch name: ");
+      block_id = dtatescann.next();
+      System.out.println("Enter Teacher name: ");
+      block_name = dtatescann.next();
+}
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+         concatinate_class oo = new concatinate_class();
+         state static_obj = new state();
+         //static varivble and methos are here
+         concatinate_class.cc();
+         //staic block is here
+         System.out.println("Static :  ");
+         System.out.println("batch name : "+static_obj.block_id+"\n"+"batch name : "+static_obj.block_name);
+	}
+}
